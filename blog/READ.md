@@ -1,1 +1,1 @@
-This is the blog of my website
+These are pictures for my blog entries. 
