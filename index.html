@@ -44,6 +44,17 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
+<title>Marian-Gabriel Hâncean</title>
+<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/mghancean/myProfile/main/_profile_foto.jpeg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Marian-Gabriel Hâncean - Quantitative Sociologist and Network Data Scientist at University of Bucharest. Expert in computational social sciences and network analysis.">
+<meta name="keywords" content="network analysis, computational sociology, social networks, data science, sociology, University of Bucharest">
+<meta name="author" content="Marian-Gabriel Hâncean">
+
+<div class="progress-bar" id="progressBar"></div>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 * {
@@ -245,14 +256,19 @@ p {
 }
 
 /* Inline Academic Links */
+/* Enhanced academic links */
 .inline-link {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    display: inline-block;
 }
 
-.inline-link i {
-    margin-right: 0.3rem;
+.inline-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* ORCID specific styling */
@@ -588,9 +604,6 @@ p {
     border-color: #28a745;
 }
 
-
-
-
 /* Section Headers */
 .section h2 {
     font-size: 2.5rem;
@@ -612,6 +625,191 @@ p {
     height: 3px;
     background: #000;
     border-radius: 0px;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Progress bar */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #007bff, #28a745);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* Citation Modal */
+.citation-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.citation-modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.citation-close {
+    color: #999;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.citation-close:hover {
+    color: #000;
+}
+
+.citation-text {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    border-left: 4px solid #007bff;
+    word-wrap: break-word;
+}
+
+.citation-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.copy-citation-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.copy-citation-btn:hover {
+    background: #0056b3;
+}
+
+/* Loading animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation for publication panels */
+.publication-panel {
+    transition: all 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Enhanced readability for academic content */
+.publication-item, .cv-card, .project-card {
+    line-height: 1.7;
+}
+
+/* Mathematical and technical content support */
+code, .monospace {
+    font-family: 'Courier New', monospace;
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0px;
+}
+
+/* Print styles for academic use */
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: black;
+    }
+    
+    .hero-section {
+        background: none !important;
+        color: black;
+        page-break-after: always;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+        min-height: auto;
+        padding: 1rem 0;
+    }
+    
+    .nav-button, .back-to-top, .progress-bar {
+        display: none !important;
+    }
+    
+    .publication-panel {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #666;
+    }
 }
 
 /* Responsive Design */
@@ -732,43 +930,6 @@ p {
         justify-content: center;
     }
 }
-
-/* Enhanced readability for academic content */
-.publication-item, .cv-card, .project-card {
-    line-height: 1.7;
-}
-
-/* Mathematical and technical content support */
-code, .monospace {
-    font-family: 'Courier New', monospace;
-    background: #f5f5f5;
-    padding: 0.2rem 0.4rem;
-    border-radius: 0px;
-}
-
-/* Print styles for academic use */
-@media print {
-    body {
-        font-size: 12pt;
-        line-height: 1.5;
-        color: black;
-    }
-    
-    .hero-section {
-        background: none;
-        color: black;
-    }
-    
-    .section {
-        page-break-inside: avoid;
-        min-height: auto;
-        padding: 1rem 0;
-    }
-    
-    .nav-button {
-        display: none;
-    }
-}
 </style>
 
 <!-- Hero Section -->
@@ -800,7 +961,7 @@ code, .monospace {
                 <img src="https://raw.githubusercontent.com/mghancean/myProfile/main/_profile_foto.jpeg" alt="Marian-Gabriel Hâncean">
             </div>
             <div class="about-text">
-                <p>Marian-Gabriel Hâncean (he/him) is a <strong>mixed-methods sociologist</strong> specializing in <strong>computational social sciences</strong> with a focus on <strong>statistical modeling</strong> and <strong>network analysis</strong>. His research integrates methodologies from sociology, data science, and computer science to analyze human behavior through the detection and analysis of complex network patterns. He employs network science and computational sociology to explore the interplay between network structures, social selection, and social influence. Recently, his work has focused on applying advanced computational models, such as <strong>Relational Hyperevent Models</strong>, to study phenomena like virus spreading in sociocentric networks, patterns of scientific collaboration, and the science of team science. His research combines theoretical and computational approaches to examine the mutual dynamics between relational event data (social interactions) and relational states (social structures).</p>
+                <p><strong>Marian-Gabriel Hâncean</strong> (he/him) is a <strong>mixed-methods sociologist</strong> specializing in <strong>computational social sciences</strong> with a focus on <strong>statistical modeling</strong> and <strong>network analysis</strong>. His research integrates methodologies from sociology, data science, and computer science to analyze human behavior through the detection and analysis of complex network patterns. He employs network science and computational sociology to explore the interplay between network structures, social selection, and social influence. Recently, his work has focused on applying advanced computational models, such as <strong>Relational Hyperevent Models</strong>, to study phenomena like virus spreading in sociocentric networks, patterns of scientific collaboration, and the science of team science. His research combines theoretical and computational approaches to examine the mutual dynamics between relational event data (social interactions) and relational states (social structures).</p>
                 <p>His <strong>current projects</strong> involve computational analyses of cancer and cardiovascular risk factors within panel personal network data observed in different living labs. His work underlines a multidisciplinary approach, bridging the gap between computational methods in social sciences and traditional network analysis techniques, in areas like public health, organizational studies, and collaborative networks.</p>
                 <p>He is a <strong>Full Professor</strong>, <strong>Habilitated</strong>, at the <strong>University of Bucharest</strong>, <strong>Department of Sociology</strong>. His most recent work has been published in outlets such as <i>Journal of the Royal Statistical Society. Series A: Statistics in Society </i>, <i>Network Science</i>, <i>Journal of Medical Internet Research</i>, <i>Scientific Reports</i>, <i>Scientific Data</i>, <i>Royal Society Open Science</i>, <i>Field Methods</i>, <i>Journal of Complex Networks</i>, <i>Scientometrics</i> or <i>Plos ONE</i>. Additionally, he has been serving as an academic editor for <em>Social Networks</em>, <i>Plos Complex Systems</i> and <i>Journal of Social Structure</i>. At the University of Bucharest, Marian-Gabriel coordinates the <i>Research Group on Graphs and Social Networks</i> (<b><a href="https://graphnets.unibuc.ro/main/" target="_blank">GraphNets</a></b>). </p>
 
@@ -827,9 +988,12 @@ code, .monospace {
     <div class="section-content">
         <div class="cv-container">
             <h2 class="anchored">Curriculum Vitae</h2>
-            <div style="text-align: center;">
-                <a href="https://github.com/mghancean/myProfile/raw/main/mghanceanCV_23June2025.pdf" target="_blank" class="cv-download-link">
-                    <i class="fas fa-download"></i> Download Full CV (PDF)
+            <div style="text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://github.com/mghancean/myProfile/blob/main/mghanceanCV_23June2025.pdf" target="_blank" class="cv-download-link">
+                    <i class="fas fa-eye"></i> View CV (PDF)
+                </a>
+                <a href="#" onclick="downloadCV()" class="cv-download-link" title="Downloads PDF file to your chosen location">
+                   <i class="fas fa-download"></i> Download CV (PDF)
                 </a>
             </div>
         </div>
@@ -871,7 +1035,7 @@ code, .monospace {
                                 <a href="https://raw.githubusercontent.com/mghancean/myProfile/main/papers/hancean_2025_processed_food_intake.pdf" target="_blank" class="action-btn pdf-btn">
                                     <i class="fas fa-file-pdf"></i> PDF
                                 </a>
-                                <a href="#" class="action-btn cite-btn">
+                                <a href="#" class="action-btn cite-btn" onclick="showCitation('Hâncean, M.-G., Lerner, J., Perc, M., Molina, J.L., Geantă, M., Oană, I. &amp; Mihăilă, B.-E. (2025). Processed food intake assortativity in the personal networks of older adults. Scientific Reports, 15, 10459. https://doi.org/10.1038/s41598-025-94969-0')">
                                     <i class="fas fa-quote-right"></i> Cite
                                 </a>
                             </div>
@@ -904,7 +1068,7 @@ code, .monospace {
                                 <a href="https://raw.githubusercontent.com/mghancean/myProfile/main/papers/lerner_2024_relational_hyperevent.pdf" target="_blank" class="action-btn pdf-btn">
                                     <i class="fas fa-file-pdf"></i> PDF
                                 </a>
-                                <a href="#" class="action-btn cite-btn">
+                                <a href="#" class="action-btn cite-btn" onclick="showCitation('Lerner, J., Hâncean, M.-G. &amp; Lomi, A. (2024). Relational hyperevent models for the coevolution of coauthoring and citation networks. Journal of the Royal Statistical Society. Series A, qnae068. https://doi.org/10.1093/jrsssa/qnae068')">
                                     <i class="fas fa-quote-right"></i> Cite
                                 </a>
                             </div>
@@ -940,7 +1104,7 @@ code, .monospace {
                                 <a href="https://raw.githubusercontent.com/mghancean/myProfile/main/papers/mihaila_2024_smoking_networks.pdf" target="_blank" class="action-btn pdf-btn">
                                     <i class="fas fa-file-pdf"></i> PDF
                                 </a>
-                                <a href="#" class="action-btn cite-btn">
+                                <a href="#" class="action-btn cite-btn" onclick="showCitation('Mihăilă, B.-E., Hâncean, M.-G., Perc, M., Lerner, J., Oană, I., Geantă, M., Molina, J.-L. &amp; Cioroboiu, C. (2024). Cross-sectional personal network analysis of adult smoking in rural areas. Royal Society Open Science, 11, 241459. https://doi.org/10.1098/rsos.241459')">
                                     <i class="fas fa-quote-right"></i> Cite
                                 </a>
                             </div>
@@ -973,7 +1137,7 @@ code, .monospace {
                                 <a href="https://raw.githubusercontent.com/mghancean/myProfile/main/papers/oana_2024_covid_vaccination.pdf" target="_blank" class="action-btn pdf-btn">
                                     <i class="fas fa-file-pdf"></i> PDF
                                 </a>
-                                <a href="#" class="action-btn cite-btn">
+                                <a href="#" class="action-btn cite-btn" onclick="showCitation('Oană, I., Hâncean, M.-G., Perc, M., Lerner, J., Mihăilă, B.-E., Geantă, M., Molina, J.L., Tincă, I. &amp; Espina, C. (2024). Online Media Use and COVID-19 Vaccination in Real-World Personal Networks: Quantitative Study. Journal of Medical Internet Research, 26, e58257. https://www.jmir.org/2024/1/e58257/')">
                                     <i class="fas fa-quote-right"></i> Cite
                                 </a>
                             </div>
@@ -1009,7 +1173,7 @@ code, .monospace {
                                 <a href="https://raw.githubusercontent.com/mghancean/myProfile/main/papers/nichita_2024_weather_covid.pdf" target="_blank" class="action-btn pdf-btn">
                                     <i class="fas fa-file-pdf"></i> PDF
                                 </a>
-                                <a href="#" class="action-btn cite-btn">
+                                <a href="#" class="action-btn cite-btn" onclick="showCitation('Nichita, D.R., Dima, M., Boboc, L., Hâncean, M.-G. (2024). Data analysis evidence beyond correlation of a possible causal impact of weather on the COVID-19 spread, mediated by human mobility. Scientific Reports, 14, 17782. https://doi.org/10.1038/s41598-024-67918-6')">
                                     <i class="fas fa-quote-right"></i> Cite
                                 </a>
                             </div>
@@ -1042,7 +1206,7 @@ code, .monospace {
                                 <a href="https://raw.githubusercontent.com/mghancean/myProfile/main/papers/feliu_2024_cancer_prevention.pdf" target="_blank" class="action-btn pdf-btn">
                                     <i class="fas fa-file-pdf"></i> PDF
                                 </a>
-                                <a href="#" class="action-btn cite-btn">
+                                <a href="#" class="action-btn cite-btn" onclick="showCitation('Feliu, A., Barrera, B., Drury, A., Hâncean, M.-G., Geantă, M., Koczkodaj, P., Pinto, P., Pla, M., Tchalakov, I., Vučković, H., Zeeb, H., &amp; Espina, C. (2024). Perceptions towards the adoption of multi-risk factors cancer prevention educational tool among European Union citizens. International Journal of Qualitative Methods, 23. https://doi.org/10.1177/16094069241256276')">
                                     <i class="fas fa-quote-right"></i> Cite
                                 </a>
                             </div>
@@ -1078,7 +1242,7 @@ code, .monospace {
                                 <a href="https://raw.githubusercontent.com/mghancean/myProfile/main/papers/hancean_2024_vaccination_opinions.pdf" target="_blank" class="action-btn pdf-btn">
                                     <i class="fas fa-file-pdf"></i> PDF
                                 </a>
-                                <a href="#" class="action-btn cite-btn">
+                                <a href="#" class="action-btn cite-btn" onclick="showCitation('Hâncean, M.-G., Lerner, J., Perc, M., Molina, J.L., &amp; Geantă, M. (2024). Assortative mixing of opinions about COVID-19 vaccination in personal networks. Scientific Reports, 14, 3385. https://doi.org/10.1038/s41598-024-53825-3')">
                                     <i class="fas fa-quote-right"></i> Cite
                                 </a>
                             </div>
@@ -1090,14 +1254,38 @@ code, .monospace {
                     </div>
                 </div>
             </div>
+            
+            <!-- Google Scholar Link -->
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+                <p style="font-size: 1.1rem; color: #000; margin-bottom: 1rem;">
+                    Details about all other publications are available at
+                </p>
+                <a href="https://scholar.google.com/citations?user=FGU4KVcAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" class="inline-link scholar-link" style="font-size: 1.2rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: #4285F4; color: white; border-radius: 25px; transition: all 0.3s ease;">
+                    <i class="fas fa-graduation-cap"></i> Google Scholar Profile
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top" onclick="scrollToTop()">
+    <i class="fas fa-chevron-up"></i>
+</button>
 
-
-
-
+<!-- Citation Modal -->
+<div id="citationModal" class="citation-modal">
+    <div class="citation-modal-content">
+        <span class="citation-close" onclick="closeCitationModal()">×</span>
+        <h3 style="margin-bottom: 1rem; color: #000;" class="anchored">Citation</h3>
+        <div id="citationText" class="citation-text"></div>
+        <div class="citation-actions">
+            <button onclick="copyCitation()" class="copy-citation-btn">
+                <i class="fas fa-copy"></i> Copy Citation
+            </button>
+        </div>
+    </div>
+</div>
 
 <script>
 // Smooth scrolling for navigation links
@@ -1114,7 +1302,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Make entire publication preview clickable (when ready)
+// Make entire publication preview clickable
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.publication-preview').forEach(preview => {
         preview.addEventListener('click', function(e) {
@@ -1204,6 +1392,102 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+
+// Function to download CV with save dialog
+function downloadCV() {
+    const link = document.createElement('a');
+    link.href = 'https://raw.githubusercontent.com/mghancean/myProfile/main/mghanceanCV_23June2025.pdf';
+    link.download = 'Marian-Gabriel-Hancean-CV.pdf';
+    
+    // Trigger download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Fade in animation on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Apply fade-in to sections
+document.addEventListener('DOMContentLoaded', function() {
+    const elementsToAnimate = document.querySelectorAll('.section-content, .publication-panel, .cv-container');
+    elementsToAnimate.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+});
+
+// Back to top functionality
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Show/hide back to top button
+window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop && window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else if (backToTop) {
+        backToTop.classList.remove('visible');
+    }
+});
+
+// Progress bar
+window.addEventListener('scroll', function() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById('progressBar');
+    if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+    }
+});
+
+// Citation functionality
+function showCitation(citation) {
+    const modal = document.getElementById('citationModal');
+    const citationText = document.getElementById('citationText');
+    citationText.textContent = citation;
+    modal.style.display = 'block';
+}
+
+function closeCitationModal() {
+    const modal = document.getElementById('citationModal');
+    modal.style.display = 'none';
+}
+
+function copyCitation() {
+    const citationText = document.getElementById('citationText').textContent;
+    navigator.clipboard.writeText(citationText).then(function() {
+        const button = document.querySelector('.copy-citation-btn');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        button.style.background = '#28a745';
+        setTimeout(function() {
+            button.innerHTML = originalText;
+            button.style.background = '#007bff';
+        }, 2000);
+    });
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('citationModal');
+    if (event.target === modal) {
+        closeCitationModal();
+    }
+}
 </script>
 
 <script id="quarto-html-after-body" type="application/javascript">
