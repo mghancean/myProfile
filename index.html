@@ -70,6 +70,7 @@ body {
     font-size: 16px;
     background: white;
     color: #000;
+    overflow-x: hidden;
 }
 
 /* Typography hierarchy - using R Journal style fonts */
@@ -855,7 +856,9 @@ code, .monospace {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+    .publication-panel {
+        grid-template-columns: 1fr;   
+    }
     .blog-row {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1519,7 +1522,7 @@ function downloadCV() {
 // Fade in animation on scroll
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px 0px 0px'
 };
 
 const observer = new IntersectionObserver(function(entries) {
