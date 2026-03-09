@@ -866,6 +866,9 @@ code, .monospace {
 }
 
 @media (max-width: 768px) {
+  .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -1540,6 +1543,10 @@ document.addEventListener('DOMContentLoaded', function() {
         el.classList.add('fade-in');
         observer.observe(el);
     });
+    // Safety fallback: guarantee all elements become visible after 1.5s
+    setTimeout(function() {
+        elementsToAnimate.forEach(el => el.classList.add('visible'));
+    }, 1500);
 });
 
 // Back to top functionality
